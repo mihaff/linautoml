@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LinAutoML сайт</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!--Шапка сайта с лого и меню-->
+  <header>
+    <div id="logo">
+        <img src="logo image/LinAutoML.png" width="280p" height="90p">
+    </div> 
+    <nav id="about" class="wrapper">
+        <ul>
+            <li><a href="#" title="Главная" onclick="slowScroll('#main')"><b>Главная</b></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Модели</a>
+              <div class="dropdown-content">
+                <a href="#">Регрессия</a>
+                <a href="#">Сентимент</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#">Документы</a>
+              <div class="dropdown-content-2">
+                <a href="#">ИИ Модели</a>
+                <div class="dropdown-content-side">
+                  <a href="regres-docs.html">Регрессия</a>
+                  <a href="#">Сентимент</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="faq.html" title="Ответы на вопросы">О нас</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Профиль</a>
+              <div class="dropdown-content">
+                <a href="enter.html">Вход</a>
+                <a href="registration.html">Регистрация</a>
+              </div>
+            </li>
+          </ul>
+    </nav> 
+  </header>
+
+  <!--Слайдер картинок-->
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="background/v904-nunny-012.jpg" style="width:100%">
+      <div class="image-block">
+        <img src="main/ai.png" style="width:50%">
+      </div>
+      <div class="image-block-2">
+        <img src="main/ai.png" style="width:100%">
+      </div>
+      <div class="text-block">
+        <h2>Почему LinAutoML?</h2>
+        <p>Никогда еще не было более захватывающего времени в сфере технологий. 
+            Искусственный интеллект создает новые способы решения проблем, привлечения клиентов 
+            и более эффективной работы. LinAoutoML готов помочь организациям проложить 
+            новый путь вперед в мире, в котором все больше внимания уделяется искусственному интеллекту.</p>
+      </div>
+      <div class="text-block-2">
+        <h2>Заставьте свои данные работать</h2>
+        <p>Это решение создано с использованием искусственного интеллекта и для него , 
+            поэтому вы можете получить новейшие инструменты для анализа машинного обучения, 
+            обучения и развертывания пользовательских базовых моделей — 
+            и все это связано с вашими бизнес-данными.</p>
+      </div>
+      <div class="text-block-3">
+        <button><a href="model.html">Начать</a></button>
+    </div>
+    <div class="mySlides fade">
+      <img src="slider/2.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+      <img src="slider/3.jpg" style="width:100%">
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+  </div>
+
+
+  <!--Главная информация-->
+  <div id="main-info">
+    <div class="intro">
+      <h2>Искусственный интеллект</h2>
+      <span>Анализируй данные</span>
+    </div>
+    <div class="text">
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos impedit, ut vero commodi voluptate? Ipsam reiciendis, necessitatibus incidunt ipsa quis sapiente excepturi, optio iusto voluptatibus dolorem officia quidem, numquam eaque minus, autem praesentium rem architecto dolores. Ipsa unde id velit optio magni enim! Illum obcaecati, dolorem distinctio nemo, ipsum iure.</span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>ПРОСТО. НАДЕЖНО. БЫСТРО.</h2>
+  </div>
+
+  <!--Контакты/обратная связь-->
+  <div id="contacts">
+    <center><h5>Обратная связь</h5></center>
+    <form id="form_input">
+      <label for="name">Имя <span>*</span></label><br>
+      <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+      <label for="email">Электронная почта<span>*</span></label><br>
+			<input type="email" placeholder="Введите email" name="email" id="email"><br>
+			<label for="message">Вопросы/комментарии<span>*</span></label><br>
+			<textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Отправить</div>
+    </form>
+  </div>
+
+
+
+  <!--Copyright-->
+  <footer>
+    <div class="copyright">
+        <p class="copyright-text">
+            &copy; 2023 All rights reserved | 
+            <a href="#">LinAoutoML</a>
+        </p>
+    </div>
+  </footer>
+
+  <!--скрипт js-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--навигация по главной странице через меню-->
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+
+  <!--слайдер изображений-->
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+
+  </script>
+
+</body>
+</html>

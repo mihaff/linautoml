@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FAQ</title>
+  <link rel="stylesheet" href="faq.css">
+</head>
+<body>
+  <!--Шапка сайта с лого и меню-->
+  <header>
+    <div id="logo">
+        <img src="logo image/LinAutoML.png" width="250p" height="80p">
+    </div>
+    <div id="about" class="wrapper">
+        <ul>
+            <li><a href="index.html" title="Главная" onclick="slowScroll('#main')">Главная</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Модели</a>
+              <div class="dropdown-content">
+                <a href="#">Classification</a>
+                <a href="#">Sentiment</a>
+              </div>
+            </li>
+            <li><a href="#">Документация</a></li>
+            <li><a href="index.html" title="Ответы на вопросы" onclick="slowScroll('#main')"><b>FAQ</b></a></li>
+            <li><a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a></li>
+            <li class="dropdown">
+              <a href="№" class="dropbtn">Профиль</a>
+              <div class="dropdown-content">
+                <a href="enter.html">Вход</a>
+                <a href="#">Регистрация</a>
+              </div>
+            </li>
+        </ul>
+    </div>
+  </header>
+ 
+  <!--Слайдер картинок-->
+  <!--image slider start-->
+  <div id="top"class="slider">
+    <div class="slides">
+      <!--radio buttons start-->
+      <input type="radio" name="radio-btn" id="radio1">
+      <input type="radio" name="radio-btn" id="radio2">
+      <input type="radio" name="radio-btn" id="radio3">
+      <input type="radio" name="radio-btn" id="radio4">
+      <!--radio buttons end-->
+      <!--slide images start-->
+      <div class="slide first">
+        <img src="slider/1 (1).jpg" style="width:100%">
+      </div>
+      <div class="slide">
+        <img src="slider/2.jpg" style="width:100%">
+      </div>
+      <div class="slide">
+        <img src="slider/1 (1).jpg" style="width:100%">
+      </div>
+      <!--slide images end-->
+      <!--automatic navigation start-->
+
+      <!--automatic navigation end-->
+    </div>
+    <!--manual navigation start-->
+    <div class="navigation-manual">
+      <label for="radio1" class="manual-btn"></label>
+      <label for="radio2" class="manual-btn"></label>
+      <label for="radio3" class="manual-btn"></label>
+    </div>
+    <!--manual navigation end-->
+  </div>
+  <!--image slider end-->
+
+
+  <!-- <div id="top">
+    <h1>Программирование</h1>
+    <h3>как способ жизни!</h3>
+  </div> -->
+
+<!-- FAQ -->
+<div id="faq">
+  <div class="faqPay faqItem">
+    <span class="title">Регистрация</span><br>
+    <span class="heading">Как войти?</span>
+    <p>Для получения доступа к сервису вам необходимо зарегистрироваться в личном кабинете и войти в свой профиль.</p>
+  </div>
+  <div class="faqInfo faqItem">
+    <span class="title">Информация</span><br>
+    <span class="heading">Что входит в услуги сервиса?</span>
+    <p>Сервис предоставляет инструменты для автоматизации процесса машинного обучения, делая его более доступным для широкой аудитории, включая тех, кто не является экспертом в области машинного обучения.</p>
+  </div>
+  <div class="faqQar faqItem">
+    <span class="title">Документация</span><br>
+    <span class="heading">Где найти инструкцию?</span>
+    <p>В нашем сервисе представлена подробная документация, которую вы можете найти в разделе Документация.</p>
+  </div>
+</div>
+<script>
+  // Add event listeners to the FAQ items
+  const faqItems = document.querySelectorAll(".faqItem");
+
+  faqItems.forEach(item => {
+    item.addEventListener("click", () => {
+      item.classList.toggle("open");
+    });
+  });
+</script>
+
+
+  <!--Форма вопросов-->
+  <div id="contacts">
+    <center><h5>Задайте вопрос</h5></center>
+    <form id="form_input">
+      <label for="name">Имя <span>*</span></label><br>
+      <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+      <label for="email">Электронная почта<span>*</span></label><br>
+			<input type="email" placeholder="Введите email" name="email" id="email"><br>
+			<label for="message">Вопросы/комментарии<span>*</span></label><br>
+			<textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Отправить</div>
+    </form>
+  </div>
+
+
+
+   <!--Copyright-->
+   <footer>
+    <div class="copyright">
+        <p class="copyright-text">
+            &copy; 2023 All rights reserved | 
+            <a href="#">Web Component</a>
+        </p>
+    </div>
+  </footer>
+
+
+  <!--скрипт js-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--навигация по главной странице через меню-->
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+
+  <!--слайдер изображений-->
+  <script type="text/javascript">
+    var slides = document.querySelectorAll('.slide');
+    var btns = document.querySelectorAll('.btn');
+    let currentSlide = 1;
+
+    // Javascript for image slider manual navigation
+    var manualNav = function(manual){
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+
+        btns.forEach((btn) => {
+          btn.classList.remove('active');
+        });
+      });
+
+      slides[manual].classList.add('active');
+      btns[manual].classList.add('active');
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        manualNav(i);
+        currentSlide = i;
+      });
+    });
+
+    // Javascript for image slider autoplay navigation
+    var repeat = function(activeClass){
+      let active = document.getElementsByClassName('active');
+      let i = 1;
+
+      var repeater = () => {
+        setTimeout(function(){
+          [...active].forEach((activeSlide) => {
+            activeSlide.classList.remove('active');
+          });
+
+        slides[i].classList.add('active');
+        btns[i].classList.add('active');
+        i++;
+
+        if(slides.length == i){
+          i = 0;
+        }
+        if(i >= slides.length){
+          return;
+        }
+        repeater();
+      }, 10000);
+      }
+      repeater();
+    }
+    repeat();
+    </script>
+
+
+</body>
+</html>
+
+</body>
+</html>
+  
